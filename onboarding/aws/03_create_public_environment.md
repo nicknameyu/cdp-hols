@@ -42,7 +42,7 @@ cdp environments create-aws-environment \
 --workload-analytics \
 --enable-tunnel \
 --authentication publicKeyId=$ssh_key_name \
---log-storage storageLocationBase=$log_location$,instanceProfile=$log_access_inst_profile_arn,backupStorageLocationBase=$log_location \
+--log-storage storageLocationBase=$log_location,instanceProfile=$log_access_inst_profile_arn,backupStorageLocationBase=$log_location \
 --vpc-id $vpcid \
 --subnet-ids $pub_subnet1 $pub_subnet2 $pub_subnet3 \
 --encryption-key-arn $key_arn \
@@ -63,7 +63,7 @@ cdp environments set-id-broker-mappings \
 
 5. Create datalake
 ```
-DATALAKENAME=dyuaws-poc-dl
+DATALAKENAME=dyu-aws-poc-dl
 
 cdp datalake create-aws-datalake \
 --datalake-name $DATALAKENAME \
