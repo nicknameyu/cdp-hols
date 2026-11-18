@@ -34,6 +34,7 @@ ssh_key_name=`terraform state show 'module.env_prerequisites.aws_key_pair.ssh_pu
 3. Create environment
 ```
 ENVNAME=dyu-aws-env-poc
+CREDENTIAL=dyu-aws-poc
 cdp environments create-aws-environment \
 --environment-name $ENVNAME \
 --credential-name $CREDENTIAL \
@@ -70,6 +71,6 @@ cdp datalake create-aws-datalake \
 --environment-name $ENVNAME \
 --cloud-provider-configuration instanceProfile=$data_access_inst_profile_arn,storageBucketLocation=$storage_location \
 --scale LIGHT_DUTY \
---runtime 7.3.2 \
+--runtime 7.3.1 \
 --enable-ranger-raz 
 ```
